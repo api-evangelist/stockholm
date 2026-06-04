@@ -1,0 +1,99 @@
+---
+aid: stockholm
+name: Stockholm University
+description: >-
+  Stockholm University (Stockholms universitet) is a public research university in
+  Sweden, ranked #128 in the QS World University Rankings 2025. Like most Nordic
+  public universities, it does not operate a single consolidated developer portal;
+  its public, machine-readable footprint is distributed across standards-based and
+  third-party services. Confirmed interfaces include the DiVA institutional
+  repository OAI-PMH metadata endpoint, the Figshare-hosted research data repository
+  (su.figshare.com) backed by the Figshare public REST API, and the public
+  GitHub organization (stockholmuniversity) where IT operations and infrastructure
+  tooling is maintained. Identity is federated through SWAMID/Shibboleth (SAML2),
+  reflected in the org's shib-keygen-api project. No general-purpose open course or
+  student-information API was found publicly documented.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/stockholm/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Open Access
+  - Repository
+  - Sweden
+  - Europe
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: stockholm:diva-oai
+    name: DiVA Institutional Repository (OAI-PMH)
+    description: >-
+      Stockholm University participates in DiVA (Academic Archive On-line), the
+      shared Swedish publishing system and digital archive for research and student
+      publications. DiVA exposes bibliographic metadata for harvesting via a live
+      OAI-PMH 2.0 endpoint, supporting standard verbs (Identify, ListRecords,
+      ListSets, GetRecord) and multiple metadata formats. Confirmed live (HTTP 200).
+    humanURL: https://su.diva-portal.org/
+    baseURL: https://su.diva-portal.org/dice/oai
+    tags: [ Repository, OAI-PMH, Metadata, Research, Open Access ]
+    properties:
+      - type: Documentation
+        url: https://www.su.se/stockholm-university-library/
+  - aid: stockholm:figshare
+    name: Stockholm University Research Data Repository (Figshare)
+    description: >-
+      Stockholm University hosts its open research data and outputs on a
+      Figshare-branded portal at su.figshare.com. Data and metadata are accessible
+      programmatically through the Figshare public REST API (api.figshare.com),
+      which supports querying articles, collections, and projects. The Figshare API
+      responded live (HTTP 200) during verification; the institutional portal
+      itself is third-party hosted.
+    humanURL: https://su.figshare.com/
+    baseURL: https://api.figshare.com/v2
+    tags: [ Research Data, Repository, Figshare, Open Data, Third-Party ]
+    properties:
+      - type: Documentation
+        url: https://docs.figshare.com/
+  - aid: stockholm:shib-keygen-api
+    name: shib-keygen-api (Shibboleth SP Metadata Tooling)
+    description: >-
+      Open-source utility from the Stockholm University GitHub organization that
+      generates Shibboleth SP/SAML2 metadata X.509 certificates and keys and stores
+      them (e.g. in HashiCorp Vault). Reflects the university's SWAMID/Shibboleth
+      (SAML2) federated identity infrastructure. Source is public on GitHub; this is
+      internal tooling rather than a consumer-facing hosted API.
+    humanURL: https://github.com/stockholmuniversity/shib-keygen-api
+    tags: [ Identity, SAML2, Shibboleth, Authentication, Open Source ]
+    properties:
+      - type: Documentation
+        url: https://github.com/stockholmuniversity/shib-keygen-api
+      - type: GitHub
+        url: https://github.com/stockholmuniversity/shib-keygen-api
+common:
+  - type: Website
+    url: https://www.su.se/english/
+  - type: GitHub
+    url: https://github.com/stockholmuniversity
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/stockholm-university/
+  - type: SourceCode
+    url: https://github.com/stockholmuniversity
+  - type: Authentication
+    url: https://www.swamid.se/
+  - type: Plans
+    url: plans/stockholm-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/stockholm-rate-limits.yml
+  - type: FinOps
+    url: finops/stockholm-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

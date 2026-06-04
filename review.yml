@@ -1,0 +1,46 @@
+---
+name: Stockholm University
+description: Stockholm University public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/stockholm/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 2
+    summary: >-
+      No consolidated developer portal exists. Confirmed live: the DiVA OAI-PMH
+      repository endpoint (returned a valid Identify response, repositoryName
+      "DiVA - Academic Archive On-line") and the Figshare public REST API backing
+      su.figshare.com (HTTP 200). The official GitHub org (stockholmuniversity, ~55
+      public repos) is live and includes shib-keygen-api, evidencing SWAMID/Shibboleth
+      SAML2 identity. No public, documented course/catalog or student-information API
+      was found. Ratings reflect a standards-based and third-party footprint rather
+      than first-party API products. No endpoints fabricated.
+    endpoints:
+      - url: https://su.diva-portal.org/dice/oai?verb=Identify
+        status: 200
+        note: Live OAI-PMH 2.0 Identify response; DiVA repository metadata harvesting.
+      - url: https://su.diva-portal.org/
+        status: 302
+        note: Redirects to /smash/ DiVA portal UI.
+      - url: https://api.figshare.com/v2/articles
+        status: 200
+        note: Figshare public REST API live; backs su.figshare.com research data repo.
+      - url: https://su.figshare.com/
+        status: 202
+        note: Stockholm University Figshare research data portal (third-party hosted).
+      - url: https://github.com/stockholmuniversity
+        status: 200
+        note: Official GitHub org, ~55 public repos including shib-keygen-api.
+      - url: https://github.com/stockholmuniversity/shib-keygen-api
+        status: 200
+        note: Shibboleth SP/SAML2 metadata keygen tooling (open source).
+      - url: https://www.su.se/english/
+        status: 200
+        note: Official institutional website (English).
+      - url: https://courses.dsv.su.se/
+        status: 200
+        note: DSV department course/timetable portal (HTML; no documented public API found).
+      - url: https://www.su.se/diva-portal-search-api
+        status: 0
+        note: No public DiVA search/REST API documentation page located for SU.
