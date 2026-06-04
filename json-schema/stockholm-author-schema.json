@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/stockholm/main/json-schema/stockholm-author-schema.json",
+  "title": "Figshare Author",
+  "description": "An author/creator associated with a research output in the Figshare API used by the Stockholm University research data repository. Derived from components.schemas.Author in the live Figshare OpenAPI 3.0.3 specification.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer", "description": "Author id" },
+    "full_name": { "type": "string", "description": "Author full name" },
+    "first_name": { "type": "string", "description": "Author first name" },
+    "last_name": { "type": "string", "description": "Author last name" },
+    "is_active": { "type": "boolean", "description": "True if author has published items" },
+    "url_name": { "type": "string", "description": "Author url name" },
+    "orcid_id": { "type": "string", "description": "Author ORCID" }
+  },
+  "required": ["id"]
+}

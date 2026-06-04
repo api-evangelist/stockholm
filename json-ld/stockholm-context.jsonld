@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "su": "https://www.su.se/vocab#",
+    "figshare": "https://docs.figshare.com/vocab#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "University": "schema:CollegeOrUniversity",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "sameAs": "schema:sameAs",
+
+    "Article": "schema:Dataset",
+    "Collection": "schema:Collection",
+    "Author": "schema:Person",
+    "Category": "schema:DefinedTerm",
+
+    "id": "schema:identifier",
+    "title": "schema:name",
+    "doi": { "@id": "schema:identifier", "@type": "@id" },
+    "handle": { "@id": "schema:identifier", "@type": "@id" },
+    "created_date": { "@id": "schema:dateCreated", "@type": "schema:DateTime" },
+    "published_date": { "@id": "schema:datePublished", "@type": "schema:DateTime" },
+    "modified_date": { "@id": "schema:dateModified", "@type": "schema:DateTime" },
+    "license": { "@id": "schema:license", "@type": "@id" },
+    "tags": "schema:keywords",
+    "authors": { "@id": "schema:author", "@container": "@set" },
+    "categories": { "@id": "schema:about", "@container": "@set" },
+    "files": { "@id": "schema:distribution", "@container": "@set" },
+
+    "full_name": "schema:name",
+    "first_name": "schema:givenName",
+    "last_name": "schema:familyName",
+    "orcid_id": { "@id": "schema:identifier", "@type": "@id" },
+
+    "defined_type_name": "dcterms:type",
+    "thumb": { "@id": "schema:thumbnailUrl", "@type": "@id" }
+  },
+  "@type": "University",
+  "name": "Stockholm University",
+  "url": "https://www.su.se/english/",
+  "description": "Public research university in Sweden whose machine-readable footprint is distributed across the DiVA OAI-PMH repository, the Figshare-backed research data repository (su.figshare.com), and the stockholmuniversity GitHub organization.",
+  "sameAs": [
+    "https://su.figshare.com/",
+    "https://su.diva-portal.org/",
+    "https://github.com/stockholmuniversity",
+    "https://www.linkedin.com/school/stockholm-university/"
+  ]
+}

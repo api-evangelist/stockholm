@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/stockholm/main/json-schema/stockholm-article-schema.json",
+  "title": "Figshare Article",
+  "description": "A research data article (dataset, figure, paper, etc.) as returned by the Figshare public API used by the Stockholm University research data repository (su.figshare.com). Derived from the components.schemas.Article object in the live Figshare OpenAPI 3.0.3 specification.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer", "description": "Unique identifier for article" },
+    "title": { "type": "string", "description": "Title of article" },
+    "doi": { "type": "string", "description": "DOI" },
+    "handle": { "type": "string", "description": "Handle" },
+    "url": { "type": "string", "format": "uri", "description": "API endpoint for article" },
+    "url_public_html": { "type": "string", "format": "uri", "description": "Public site endpoint for article" },
+    "url_public_api": { "type": "string", "format": "uri", "description": "Public API endpoint for article" },
+    "url_private_html": { "type": "string", "format": "uri", "description": "Private site endpoint for article" },
+    "url_private_api": { "type": "string", "format": "uri", "description": "Private API endpoint for article" },
+    "timeline": {
+      "type": "object",
+      "description": "Important dates in the lifecycle of the article",
+      "properties": {
+        "posted": { "type": "string" },
+        "firstOnline": { "type": "string" },
+        "revision": { "type": "string" },
+        "submission": { "type": "string" },
+        "publisherPublication": { "type": "string" },
+        "publisherAcceptance": { "type": "string" }
+      }
+    },
+    "thumb": { "type": "string", "format": "uri", "description": "Thumbnail image" },
+    "defined_type": { "type": "integer", "description": "Type of article identifier" },
+    "defined_type_name": { "type": "string", "description": "Name of the article type identifier" },
+    "resource_doi": { "type": "string", "description": "Deprecated by related materials" },
+    "resource_title": { "type": "string", "description": "Deprecated by related materials" },
+    "created_date": { "type": "string", "format": "date-time", "description": "Date when article was created" },
+    "published_date": { "type": ["string", "null"], "format": "date-time", "description": "Date when article was published" },
+    "modified_date": { "type": "string", "format": "date-time", "description": "Date when article was last modified" },
+    "group_id": { "type": "integer", "description": "Group identifier the article belongs to" }
+  },
+  "required": ["id", "title"]
+}

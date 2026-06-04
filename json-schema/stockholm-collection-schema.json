@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/stockholm/main/json-schema/stockholm-collection-schema.json",
+  "title": "Figshare Collection",
+  "description": "A collection grouping multiple research articles in the Figshare API used by the Stockholm University research data repository. Derived from components.schemas.Collection in the live Figshare OpenAPI 3.0.3 specification.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer", "description": "Collection id" },
+    "title": { "type": "string", "description": "Collection title" },
+    "doi": { "type": "string", "description": "Collection DOI" },
+    "handle": { "type": "string", "description": "Collection Handle" },
+    "url": { "type": "string", "format": "uri", "description": "API endpoint" },
+    "timeline": {
+      "type": "object",
+      "description": "Important dates in the lifecycle of the collection",
+      "properties": {
+        "posted": { "type": "string" },
+        "firstOnline": { "type": "string" },
+        "revision": { "type": "string" },
+        "submission": { "type": "string" }
+      }
+    }
+  },
+  "required": ["id", "title"]
+}

@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.figshare.com/v2/articles?page=1&page_size=2",
+    "description": "List public articles from the Figshare API that backs the Stockholm University research data repository (su.figshare.com). The same endpoint is filterable by group/institution. Response shape mirrors a live HTTP 200 from api.figshare.com/v2/articles."
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "id": 32574077,
+        "title": "Influence of the Conjugated Structure of Redox Ligands on the PCET Process in Water Oxidation Reactions",
+        "doi": "10.6084/m9.figshare.32574077.v1",
+        "handle": "",
+        "url": "https://api.figshare.com/v2/articles/32574077",
+        "published_date": "2026-06-04T03:04:55Z",
+        "thumb": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/65271416/thumb.png",
+        "defined_type": 3,
+        "defined_type_name": "dataset",
+        "group_id": 0,
+        "url_private_api": "https://api.figshare.com/v2/account/articles/32574077",
+        "url_public_api": "https://api.figshare.com/v2/articles/32574077",
+        "url_private_html": "https://figshare.com/account/articles/32574077",
+        "url_public_html": "https://figshare.com/articles/dataset/Influence_of_Redox_Ligands/32574077",
+        "timeline": { "posted": "2026-06-04T03:04:55" },
+        "resource_title": "",
+        "resource_doi": "",
+        "created_date": "2026-06-04T03:04:55Z",
+        "modified_date": "2026-06-04T03:04:56Z"
+      },
+      {
+        "id": 32574060,
+        "title": "Supplementary data for X-ray crystallography study",
+        "doi": "10.6084/m9.figshare.32574060.v1",
+        "handle": "",
+        "url": "https://api.figshare.com/v2/articles/32574060",
+        "published_date": "2026-06-03T18:22:10Z",
+        "thumb": "",
+        "defined_type": 3,
+        "defined_type_name": "dataset",
+        "group_id": 0,
+        "url_public_api": "https://api.figshare.com/v2/articles/32574060",
+        "url_public_html": "https://figshare.com/articles/dataset/Supplementary_data/32574060",
+        "timeline": { "posted": "2026-06-03T18:22:10" },
+        "created_date": "2026-06-03T18:22:10Z",
+        "modified_date": "2026-06-03T18:22:11Z"
+      }
+    ]
+  }
+}

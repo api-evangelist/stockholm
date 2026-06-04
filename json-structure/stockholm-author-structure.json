@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/stockholm/main/json-structure/stockholm-author-structure.json",
+  "name": "StockholmFigshareAuthor",
+  "description": "JSON Structure for an author/creator on a Figshare research output exposed through the Stockholm University research data repository.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int64", "description": "Author id" },
+    "full_name": { "type": "string", "description": "Author full name" },
+    "first_name": { "type": "string", "description": "Author first name" },
+    "last_name": { "type": "string", "description": "Author last name" },
+    "is_active": { "type": "boolean", "description": "True if author has published items" },
+    "url_name": { "type": "string", "description": "Author url name" },
+    "orcid_id": { "type": "string", "description": "Author ORCID identifier" }
+  },
+  "required": ["id"]
+}

@@ -1,0 +1,68 @@
+vocabulary:
+  name: Stockholm University Research Data API Vocabulary
+  description: >-
+    Controlled vocabulary of the core terms used by the public, machine-readable
+    interfaces cataloged for Stockholm University: the Figshare-backed research data
+    repository (su.figshare.com / api.figshare.com/v2) and the DiVA OAI-PMH
+    institutional repository. Terms are drawn from the live Figshare OpenAPI 3.0.3
+    specification and OAI-PMH 2.0 protocol; no terms are invented.
+  version: "1.0.0"
+  terms:
+    - term: Article
+      definition: >-
+        A research output (dataset, figure, media, paper, etc.) published on the
+        Figshare repository, identified by a unique id and DOI.
+      tags: [figshare, research-data, core]
+    - term: Collection
+      definition: A grouping of related articles published together under a single DOI.
+      tags: [figshare, research-data]
+    - term: Project
+      definition: A workspace grouping articles and collaborators within Figshare.
+      tags: [figshare, research-data]
+    - term: Author
+      definition: >-
+        A creator/contributor associated with an article, optionally resolved by an
+        ORCID identifier.
+      tags: [figshare, identity, attribution]
+    - term: Category
+      definition: >-
+        A subject classification term from a Figshare taxonomy used to categorize
+        research outputs.
+      tags: [figshare, taxonomy, classification]
+    - term: DOI
+      definition: >-
+        Digital Object Identifier providing a persistent, citable reference to a
+        research output or collection.
+      tags: [persistent-identifier, citation]
+    - term: Handle
+      definition: A persistent Handle System identifier for a research output.
+      tags: [persistent-identifier]
+    - term: Timeline
+      definition: >-
+        The set of lifecycle dates (posted, firstOnline, revision, submission) for a
+        research output.
+      tags: [figshare, provenance, dates]
+    - term: File
+      definition: A downloadable file attached to an article, with size and MD5 checksum.
+      tags: [figshare, files, integrity]
+    - term: License
+      definition: The reuse license assigned to a research output (e.g. CC BY 4.0).
+      tags: [open-access, licensing]
+    - term: defined_type
+      definition: >-
+        The Figshare item type code and name (e.g. dataset, media, figure, paper)
+        describing the nature of the article.
+      tags: [figshare, typing]
+    - term: OAI-PMH
+      definition: >-
+        Open Archives Initiative Protocol for Metadata Harvesting 2.0, the standard by
+        which the DiVA institutional repository exposes bibliographic metadata.
+      tags: [diva, harvesting, metadata, standard]
+    - term: ListRecords
+      definition: >-
+        OAI-PMH verb returning batches of metadata records from the DiVA repository,
+        optionally filtered by set and date range.
+      tags: [oai-pmh, diva, harvesting]
+    - term: GetRecord
+      definition: OAI-PMH verb returning a single metadata record by identifier from DiVA.
+      tags: [oai-pmh, diva, harvesting]

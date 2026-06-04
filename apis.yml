@@ -60,6 +60,20 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.figshare.com/
+      - type: OpenAPI
+        url: openapi/stockholm-figshare.yaml
+      - type: JSONSchema
+        url: json-schema/stockholm-article-schema.json
+      - type: x-json-structure
+        url: json-structure/stockholm-article-structure.json
+      - type: x-examples
+        url: examples/stockholm-list-articles-example.json
+      - type: x-rules
+        url: rules/stockholm-rules.yml
+      - type: x-vocabulary
+        url: vocabulary/stockholm-vocabulary.yml
+      - type: x-json-ld
+        url: json-ld/stockholm-context.jsonld
   - aid: stockholm:shib-keygen-api
     name: shib-keygen-api (Shibboleth SP Metadata Tooling)
     description: >-

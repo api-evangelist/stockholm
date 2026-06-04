@@ -1,0 +1,66 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.figshare.com/v2/articles/32574077",
+    "description": "Retrieve a single public article (ArticleComplete) including authors, files and custom fields. Shape mirrors a live HTTP 200 from the Figshare API backing su.figshare.com."
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": 32574077,
+      "title": "Influence of the Conjugated Structure of Redox Ligands on the PCET Process in Water Oxidation Reactions",
+      "doi": "10.6084/m9.figshare.32574077.v1",
+      "handle": "",
+      "url": "https://api.figshare.com/v2/articles/32574077",
+      "url_public_html": "https://figshare.com/articles/dataset/Influence_of_Redox_Ligands/32574077",
+      "url_public_api": "https://api.figshare.com/v2/articles/32574077",
+      "figshare_url": "https://figshare.com/articles/dataset/Influence_of_Redox_Ligands/32574077",
+      "defined_type": 3,
+      "defined_type_name": "dataset",
+      "group_id": 0,
+      "published_date": "2026-06-04T03:04:55Z",
+      "created_date": "2026-06-04T03:04:55Z",
+      "modified_date": "2026-06-04T03:04:56Z",
+      "timeline": { "posted": "2026-06-04T03:04:55", "firstOnline": "2026-06-04T03:04:55" },
+      "license": {
+        "value": 1,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "authors": [
+        {
+          "id": 1500001,
+          "full_name": "Anna Lindqvist",
+          "first_name": "Anna",
+          "last_name": "Lindqvist",
+          "is_active": true,
+          "url_name": "Anna_Lindqvist",
+          "orcid_id": "0000-0002-1825-0097"
+        }
+      ],
+      "categories": [
+        {
+          "id": 13431,
+          "title": "Inorganic chemistry",
+          "parent_id": 13430,
+          "path": "/13430/13431",
+          "source_id": "340699",
+          "taxonomy_id": 100
+        }
+      ],
+      "tags": ["water oxidation", "PCET", "redox ligands"],
+      "files": [
+        {
+          "id": 65271416,
+          "name": "dataset.zip",
+          "size": 10485760,
+          "is_link_only": false,
+          "download_url": "https://ndownloader.figshare.com/files/65271416",
+          "supplied_md5": "d41d8cd98f00b204e9800998ecf8427e",
+          "computed_md5": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "custom_fields": []
+    }
+  }
+}

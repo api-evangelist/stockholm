@@ -1,0 +1,53 @@
+formats:
+  - oas3
+
+rules:
+
+  stockholm-info-contact:
+    description: API info object should declare a contact, as the Figshare-backed Stockholm research data API does.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+
+  stockholm-info-license:
+    description: API info object should declare a license (Figshare publishes under Apache 2.0).
+    severity: warn
+    given: $.info
+    then:
+      field: license
+      function: truthy
+
+  stockholm-server-https:
+    description: Servers must use HTTPS; the Figshare API base is https://api.figshare.com/v2.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  stockholm-article-has-doi:
+    description: Article-like response schemas should expose a doi property for persistent citation.
+    severity: info
+    given: $.components.schemas[?(@property.match(/^Article/))].properties
+    then:
+      field: doi
+      function: defined
+
+  stockholm-author-orcid:
+    description: Author schemas should expose orcid_id to support researcher identity resolution.
+    severity: info
+    given: $.components.schemas.Author.properties
+    then:
+      field: orcid_id
+      function: defined
+
+  stockholm-operation-summary:
+    description: Every operation should have a summary describing its purpose.
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: summary
+      function: truthy
