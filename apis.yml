@@ -90,6 +90,10 @@ apis:
       - type: GitHub
         url: https://github.com/stockholmuniversity/shib-keygen-api
 common:
+  - type: Authentication
+    url: authentication/stockholm-authentication.yml
+  - type: OAuthScopes
+    url: scopes/stockholm-scopes.yml
   - type: Website
     url: https://www.su.se/english/
   - type: GitHub
