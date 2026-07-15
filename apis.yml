@@ -90,6 +90,8 @@ apis:
       - type: GitHub
         url: https://github.com/stockholmuniversity/shib-keygen-api
 common:
+  - type: AgenticAccess
+    url: agentic-access/stockholm-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/stockholm-vulnerability-disclosure.yml
   - type: DomainSecurity
