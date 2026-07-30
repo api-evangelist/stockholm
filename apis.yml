@@ -14,9 +14,22 @@ description: >-
   reflected in the org's shib-keygen-api project. No general-purpose open course or
   student-information API was found publicly documented.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stockholm.png
 url: https://raw.githubusercontent.com/api-evangelist/stockholm/refs/heads/main/apis.yml
 tags:
   - Education
@@ -31,64 +44,283 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: stockholm:diva-oai
-    name: DiVA Institutional Repository (OAI-PMH)
-    description: >-
-      Stockholm University participates in DiVA (Academic Archive On-line), the
-      shared Swedish publishing system and digital archive for research and student
-      publications. DiVA exposes bibliographic metadata for harvesting via a live
-      OAI-PMH 2.0 endpoint, supporting standard verbs (Identify, ListRecords,
-      ListSets, GetRecord) and multiple metadata formats. Confirmed live (HTTP 200).
-    humanURL: https://su.diva-portal.org/
-    baseURL: https://su.diva-portal.org/dice/oai
-    tags: [ Repository, OAI-PMH, Metadata, Research, Open Access ]
-    properties:
-      - type: Documentation
-        url: https://www.su.se/stockholm-university-library/
-  - aid: stockholm:figshare
-    name: Stockholm University Research Data Repository (Figshare)
-    description: >-
-      Stockholm University hosts its open research data and outputs on a
-      Figshare-branded portal at su.figshare.com. Data and metadata are accessible
-      programmatically through the Figshare public REST API (api.figshare.com),
-      which supports querying articles, collections, and projects. The Figshare API
-      responded live (HTTP 200) during verification; the institutional portal
-      itself is third-party hosted.
-    humanURL: https://su.figshare.com/
-    baseURL: https://api.figshare.com/v2
-    tags: [ Research Data, Repository, Figshare, Open Data, Third-Party ]
-    properties:
-      - type: Documentation
-        url: https://docs.figshare.com/
-      - type: OpenAPI
-        url: openapi/stockholm-figshare.yaml
-      - type: JSONSchema
-        url: json-schema/stockholm-article-schema.json
-      - type: x-json-structure
-        url: json-structure/stockholm-article-structure.json
-      - type: x-examples
-        url: examples/stockholm-list-articles-example.json
-      - type: x-rules
-        url: rules/stockholm-rules.yml
-      - type: x-vocabulary
-        url: vocabulary/stockholm-vocabulary.yml
-      - type: x-json-ld
-        url: json-ld/stockholm-context.jsonld
-  - aid: stockholm:shib-keygen-api
-    name: shib-keygen-api (Shibboleth SP Metadata Tooling)
-    description: >-
-      Open-source utility from the Stockholm University GitHub organization that
-      generates Shibboleth SP/SAML2 metadata X.509 certificates and keys and stores
-      them (e.g. in HashiCorp Vault). Reflects the university's SWAMID/Shibboleth
-      (SAML2) federated identity infrastructure. Source is public on GitHub; this is
-      internal tooling rather than a consumer-facing hosted API.
-    humanURL: https://github.com/stockholmuniversity/shib-keygen-api
-    tags: [ Identity, SAML2, Shibboleth, Authentication, Open Source ]
-    properties:
-      - type: Documentation
-        url: https://github.com/stockholmuniversity/shib-keygen-api
-      - type: GitHub
-        url: https://github.com/stockholmuniversity/shib-keygen-api
+- aid: stockholm:diva-oai
+  name: DiVA Institutional Repository (OAI-PMH)
+  description: >-
+    Stockholm University participates in DiVA (Academic Archive On-line), the shared Swedish publishing
+    system and digital archive for research and student publications. DiVA exposes bibliographic metadata
+    for harvesting via a live OAI-PMH 2.0 endpoint, supporting standard verbs (Identify, ListRecords,
+    ListSets, GetRecord) and multiple metadata formats. Confirmed live (HTTP 200).
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - Repository
+  - OAI-PMH
+  - Metadata
+  - Research
+  - Open Access
+  properties:
+  - type: Documentation
+    url: https://www.su.se/stockholm-university-library/
+- aid: stockholm:shib-keygen-api
+  name: shib-keygen-api (Shibboleth SP Metadata Tooling)
+  description: >-
+    Open-source utility from the Stockholm University GitHub organization that generates Shibboleth SP/SAML2
+    metadata X.509 certificates and keys and stores them (e.g. in HashiCorp Vault). Reflects the university's
+    SWAMID/Shibboleth (SAML2) federated identity infrastructure. Source is public on GitHub; this is internal
+    tooling rather than a consumer-facing hosted API.
+  humanURL: https://github.com/stockholmuniversity/shib-keygen-api
+  tags:
+  - Identity
+  - SAML2
+  - Shibboleth
+  - Authentication
+  - Open Source
+  properties:
+  - type: Documentation
+    url: https://github.com/stockholmuniversity/shib-keygen-api
+  - type: GitHub
+    url: https://github.com/stockholmuniversity/shib-keygen-api
+- aid: stockholm:stockholm-altmetric-api
+  name: Stockholm University altmetric API
+  description: The altmetric API from Stockholm University — 1 operation(s) for altmetric.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - altmetric
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-altmetric-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-articles-api
+  name: Stockholm University articles API
+  description: The articles API from Stockholm University — 34 operation(s) for articles.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - articles
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-articles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-authors-api
+  name: Stockholm University authors API
+  description: The authors API from Stockholm University — 2 operation(s) for authors.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - authors
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-authors-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-collections-api
+  name: Stockholm University collections API
+  description: The collections API from Stockholm University — 21 operation(s) for collections.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - collections
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-collections-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-institutions-api
+  name: Stockholm University institutions API
+  description: The institutions API from Stockholm University — 20 operation(s) for institutions.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - institutions
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-institutions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-oauth-api
+  name: Stockholm University oauth API
+  description: The oauth API from Stockholm University — 1 operation(s) for oauth.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-other-api
+  name: Stockholm University other API
+  description: The other API from Stockholm University — 7 operation(s) for other.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - other
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-other-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-profiles-api
+  name: Stockholm University profiles API
+  description: The profiles API from Stockholm University — 2 operation(s) for profiles.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-projects-api
+  name: Stockholm University projects API
+  description: The projects API from Stockholm University — 17 operation(s) for projects.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - projects
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
+- aid: stockholm:stockholm-symplectic-api
+  name: Stockholm University symplectic API
+  description: The symplectic API from Stockholm University — 5 operation(s) for symplectic.
+  humanURL: https://su.diva-portal.org/
+  baseURL: https://su.diva-portal.org/dice/oai
+  tags:
+  - symplectic
+  properties:
+  - type: OpenAPI
+    url: openapi/stockholm-symplectic-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: JSONSchema
+    url: json-schema/stockholm-article-schema.json
+  - type: x-json-structure
+    url: json-structure/stockholm-article-structure.json
+  - type: x-examples
+    url: examples/stockholm-list-articles-example.json
+  - type: x-rules
+    url: rules/stockholm-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/stockholm-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/stockholm-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/stockholm-agentic-access.yml
