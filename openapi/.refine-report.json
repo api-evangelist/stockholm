@@ -1,0 +1,32 @@
+{
+  "provider": "stockholm",
+  "sources": [
+    "stockholm-altmetric-api-openapi.yml",
+    "stockholm-articles-api-openapi.yml",
+    "stockholm-authors-api-openapi.yml",
+    "stockholm-collections-api-openapi.yml",
+    "stockholm-institutions-api-openapi.yml",
+    "stockholm-oauth-api-openapi.yml",
+    "stockholm-other-api-openapi.yml",
+    "stockholm-profiles-api-openapi.yml",
+    "stockholm-projects-api-openapi.yml",
+    "stockholm-symplectic-api-openapi.yml"
+  ],
+  "outputs": [
+    "stockholm-altmetric-api-openapi.yml",
+    "stockholm-articles-api-openapi.yml",
+    "stockholm-authors-api-openapi.yml",
+    "stockholm-collections-api-openapi.yml",
+    "stockholm-institutions-api-openapi.yml",
+    "stockholm-oauth-api-openapi.yml",
+    "stockholm-other-api-openapi.yml",
+    "stockholm-profiles-api-openapi.yml",
+    "stockholm-projects-api-openapi.yml",
+    "stockholm-symplectic-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
