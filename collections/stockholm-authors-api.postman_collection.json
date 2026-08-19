@@ -1,0 +1,624 @@
+{
+  "item": [
+    {
+      "id": "05e74d4e-023b-4ddc-8aea-df55dda6c5c2",
+      "name": "authors",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "93e27e47-ea80-4dd7-bad7-9e72b44ff12f",
+          "name": "Search Authors",
+          "request": {
+            "name": "Search Authors",
+            "description": {
+              "content": "Search for authors",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "account",
+                "authors",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"search_for\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"page_size\": 10,\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "494c1286-8529-43d4-845b-98c5fc0a2bf3",
+              "name": "OK. An array of authors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"search_for\": \"figshare\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"limit\": 10,\n  \"offset\": 0,\n  \"institution_id\": 1,\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"first_name\": \"John\",\n    \"full_name\": \"John Doe\",\n    \"group_id\": 8885,\n    \"id\": 97657,\n    \"institution_id\": 3388,\n    \"is_active\": false,\n    \"is_public\": 513,\n    \"job_title\": \"string\",\n    \"last_name\": \"Doe\",\n    \"orcid_id\": \"1234-5678-9123-1234\",\n    \"url_name\": \"John_Doe\"\n  },\n  {\n    \"first_name\": \"John\",\n    \"full_name\": \"John Doe\",\n    \"group_id\": 2175,\n    \"id\": 97657,\n    \"institution_id\": 2572,\n    \"is_active\": false,\n    \"is_public\": 2526,\n    \"job_title\": \"string\",\n    \"last_name\": \"Doe\",\n    \"orcid_id\": \"1234-5678-9123-1234\",\n    \"url_name\": \"John_Doe\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e1eca05-2ef3-4ca1-b04a-d573279d870e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"search_for\": \"figshare\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"limit\": 10,\n  \"offset\": 0,\n  \"institution_id\": 1,\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "97f5204f-f686-4149-b958-48ae81079ed4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"search_for\": \"figshare\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"limit\": 10,\n  \"offset\": 0,\n  \"institution_id\": 1,\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5705,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad870ad2-8823-4eb4-9e6c-7bc6d1afe1c7",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"search_for\": \"figshare\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"limit\": 10,\n  \"offset\": 0,\n  \"institution_id\": 1,\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "632d801f-5106-4540-93e6-099537332125",
+          "name": "Author details",
+          "request": {
+            "name": "Author details",
+            "description": {
+              "content": "View author details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "account",
+                "authors",
+                ":author_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "author_id",
+                  "description": "(Required) Author unique identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "99d615c8-cc93-4581-8a6e-4cafd362bbe8",
+              "name": "OK. Article representation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    ":author_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "author_id",
+                      "description": "(Required) Author unique identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"first_name\": \"John\",\n  \"full_name\": \"John Doe\",\n  \"group_id\": 1153,\n  \"id\": 97657,\n  \"institution_id\": 4147,\n  \"is_active\": false,\n  \"is_public\": 1179,\n  \"job_title\": \"string\",\n  \"last_name\": \"Doe\",\n  \"orcid_id\": \"1234-5678-9123-1234\",\n  \"url_name\": \"John_Doe\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3a7d032-ceb8-42b7-ad00-405d16ead130",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    ":author_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "author_id",
+                      "description": "(Required) Author unique identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6a079479-c96f-439d-8c23-ee767a327b83",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    ":author_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "author_id",
+                      "description": "(Required) Author unique identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5705,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6cfb8a4f-4675-4d72-b164-77e42d4e0ffe",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    ":author_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "author_id",
+                      "description": "(Required) Author unique identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d1f1c011-de5c-4264-b674-b4614ee2e766",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "authors",
+                    ":author_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "author_id",
+                      "description": "(Required) Author unique identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.figshare.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "87d03c18-7d11-426c-a8ae-e9953516268c",
+    "name": "Figshare altmetric authors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+      "type": "text/plain"
+    }
+  }
+}

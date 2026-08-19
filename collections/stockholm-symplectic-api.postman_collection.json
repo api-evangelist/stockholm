@@ -1,0 +1,1591 @@
+{
+  "item": [
+    {
+      "id": "b0872186-dbc5-40f5-981c-c326a05a953d",
+      "name": "symplectic",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "feeee299-e966-4910-bd7e-95755f00f8b9",
+          "name": "Get changed articles for Symplectic Elements",
+          "request": {
+            "name": "Get changed articles for Symplectic Elements",
+            "description": {
+              "content": "Returns a list of articles for Symplectic Elements integration to synchronize article data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "symplectic",
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>",
+                  "description": "(Required) ISO 8601 datetime string indicating the start of the search window (format: YYYY-MM-DD HH:MM:SS)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of results to skip for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Maximum number of results to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by article status"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_embargoed",
+                  "value": "<string>",
+                  "description": "Filter by embargo status. When true, only returns articles with EMBARGO_ARTICLE type"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3e13c398-ab84-4852-9a0d-91bdd93f4186",
+              "name": "OK. Returns a list of symplectic articles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hash of the returned articles for caching purposes",
+                  "key": "ETag",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8c02e08-1b98-49bb-a354-32a540253fd4",
+              "name": "Bad Request - Missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f57f6df2-77dd-41ee-8d79-7a8e1307bc71",
+              "name": "Unauthorized - Missing or invalid OAuth token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d417fdf0-a910-4d6d-8d50-1666fb614d3d",
+              "name": "Forbidden - Insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2757c5f-74c6-4bba-8449-99f34d6a7456",
+          "name": "Get institutional user ID for a user",
+          "request": {
+            "name": "Get institutional user ID for a user",
+            "description": {
+              "content": "Returns the institution user ID for a given user within the authenticated account's institution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "symplectic",
+                "users",
+                ":user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "user_id",
+                  "description": "(Required) User ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "969d110a-4715-4ea9-a601-d7df7d3ca546",
+              "name": "OK. Returns the institutional user ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "users",
+                    ":user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "user_id",
+                      "description": "(Required) User ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"institutionUserId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "859b1be4-2e06-4c33-9046-ee50400fa8e7",
+              "name": "Unauthorized - Missing or invalid OAuth token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "users",
+                    ":user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "user_id",
+                      "description": "(Required) User ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b72ba2b-38d2-42c9-a1c6-a2ae9198fd7c",
+              "name": "Forbidden - Insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "users",
+                    ":user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "user_id",
+                      "description": "(Required) User ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c71c7d9a-1074-424d-a3d9-6a7564ae0b75",
+              "name": "Not Found - User not found or user has no account in this institution",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "users",
+                    ":user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "user_id",
+                      "description": "(Required) User ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4c3463f-850b-4d47-9abe-bfc285e72a60",
+          "name": "Get article details for Symplectic Elements",
+          "request": {
+            "name": "Get article details for Symplectic Elements",
+            "description": {
+              "content": "Returns detailed information about a specific article for Symplectic Elements integration, including full metadata and author account information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "symplectic",
+                "articles",
+                ":article_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "article_id",
+                  "description": "(Required) Article ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6fa39a96-533e-4b3a-9ca8-a8aad78886cd",
+              "name": "OK. Returns the article details with full metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "article_id",
+                      "description": "(Required) Article ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hash of the returned article for caching purposes",
+                  "key": "ETag",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85eeb7f2-33d6-422a-b272-4a58847bee35",
+              "name": "Unauthorized - Missing or invalid OAuth token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "article_id",
+                      "description": "(Required) Article ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e23fa11-f4c3-4d21-8713-dfcf26e282a8",
+              "name": "Forbidden - Insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "article_id",
+                      "description": "(Required) Article ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d75e512-b141-4237-bd8c-57faf49a6e35",
+              "name": "Not Found - Article not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "article_id",
+                      "description": "(Required) Article ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfc7bb15-bd1a-4e55-991d-7bd337e84e4f",
+          "name": "Get articles for a specific account",
+          "request": {
+            "name": "Get articles for a specific account",
+            "description": {
+              "content": "Returns a list of articles for a specific user account identified by external_user_id (symplectic_user_id or institution_user_id).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "symplectic",
+                "accounts",
+                ":external_user_id",
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of results to skip for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Maximum number of results to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by article status"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_embargoed",
+                  "value": "<string>",
+                  "description": "Filter by embargo status"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "external_user_id",
+                  "description": "(Required) External user ID (symplectic_user_id or institution_user_id)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a1e74ece-30f9-4d62-b9cb-8dd821088326",
+              "name": "OK. Returns a list of articles for the specified account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts",
+                    ":external_user_id",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "external_user_id",
+                      "description": "(Required) External user ID (symplectic_user_id or institution_user_id)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hash of the returned articles for caching purposes",
+                  "key": "ETag",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a4f86b1-6541-4669-8b44-3489d675f8ac",
+              "name": "Unauthorized - Missing or invalid OAuth token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts",
+                    ":external_user_id",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "external_user_id",
+                      "description": "(Required) External user ID (symplectic_user_id or institution_user_id)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e43ddc4-7d9b-48aa-8223-646c1b78177d",
+              "name": "Forbidden - Insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts",
+                    ":external_user_id",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "external_user_id",
+                      "description": "(Required) External user ID (symplectic_user_id or institution_user_id)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06a6fff7-1785-4302-9a4a-df0263999c86",
+              "name": "Not Found - Account not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts",
+                    ":external_user_id",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_embargoed",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "external_user_id",
+                      "description": "(Required) External user ID (symplectic_user_id or institution_user_id)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "228543aa-272c-48df-adc8-08dfe44632c9",
+          "name": "Get changed accounts for Symplectic Elements",
+          "request": {
+            "name": "Get changed accounts for Symplectic Elements",
+            "description": {
+              "content": "Returns a list of accounts that have been modified since the specified date for Symplectic Elements integration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "symplectic",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>",
+                  "description": "(Required) ISO 8601 datetime string indicating the start of the search window (format: YYYY-MM-DD HH:MM:SS)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "17ccb6f0-6e03-49ca-bc51-9b752ed6aa71",
+              "name": "OK. Returns a list of modified accounts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hash of the returned accounts for caching purposes",
+                  "key": "ETag",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"institutionUserId\": \"string\",\n    \"modifiedDate\": \"1979-08-12T19:29:21.280Z\"\n  },\n  {\n    \"institutionUserId\": \"string\",\n    \"modifiedDate\": \"1950-02-20T13:51:07.104Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e48b06a0-7b80-4270-878e-631d7a751616",
+              "name": "Bad Request - Missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67a861f6-e218-4852-a82e-fbf522c7ade1",
+              "name": "Unauthorized - Missing or invalid OAuth token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5dfa8c37-4ba9-4958-933b-de3d2198bf6c",
+              "name": "Forbidden - Insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "symplectic",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "2015-01-01 00:00:00"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.figshare.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "90ae6d86-9f48-4447-b5d6-e0914c6ece5f",
+    "name": "Figshare altmetric symplectic API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+      "type": "text/plain"
+    }
+  }
+}
