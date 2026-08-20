@@ -75,6 +75,12 @@ apis:
   - SAML2
   - Shibboleth
   - Authentication
+  - Open-Source
+  tags_raw:
+  - Identity
+  - SAML2
+  - Shibboleth
+  - Authentication
   - Open Source
   properties:
   - type: Documentation
@@ -111,6 +117,8 @@ apis:
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
   tags:
+  - Articles
+  tags_raw:
   - articles
   properties:
   - type: OpenAPI
@@ -135,6 +143,8 @@ apis:
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
   tags:
+  - Authors
+  tags_raw:
   - authors
   properties:
   - type: OpenAPI
@@ -159,6 +169,8 @@ apis:
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
   tags:
+  - Collection
+  tags_raw:
   - collections
   properties:
   - type: OpenAPI
@@ -207,6 +219,8 @@ apis:
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
   tags:
+  - Authentication
+  tags_raw:
   - oauth
   properties:
   - type: OpenAPI
@@ -230,7 +244,8 @@ apis:
   description: The other API from Stockholm University — 7 operation(s) for other.
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
-  tags:
+  tags: []
+  tags_raw:
   - other
   properties:
   - type: OpenAPI
@@ -255,6 +270,8 @@ apis:
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
   tags:
+  - Profiles
+  tags_raw:
   - profiles
   properties:
   - type: OpenAPI
@@ -279,6 +296,8 @@ apis:
   humanURL: https://su.diva-portal.org/
   baseURL: https://su.diva-portal.org/dice/oai
   tags:
+  - Project
+  tags_raw:
   - projects
   properties:
   - type: OpenAPI
