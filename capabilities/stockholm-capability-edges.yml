@@ -1,0 +1,36 @@
+slug: stockholm
+provider: Stockholm University
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: articles
+  spec_file: stockholm-articles-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.85
+  evidence: GET /articles/{article_id}/versions  article_versions; schemas ArticleDOI, ArticleEmbargoUpdater,
+    FundingInformation; 'Public Article Confidentiality for article version'
+  reason: Figshare is a research output repository; the operations manage published research items with
+    DOIs, versions, embargo and confidentiality — i.e. stewardship of scholarly output, persistent identifiers
+    and open access, not generic content or news articles.
+- tag: collections
+  spec_file: stockholm-collections-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.8
+  evidence: GET /collections/{collection_id}/articles  collection_articles  Public Collection Articles;
+    schemas CollectionHandle, FundingCreate, FundingInformation
+  reason: Collections group deposited research articles in the institutional repository, with handles/DOIs
+    and funding metadata — stewardship of scholarly output rather than a commercial catalogue.

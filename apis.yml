@@ -353,6 +353,9 @@ apis:
   - type: x-json-ld
     url: json-ld/stockholm-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/stockholm-capability-edges.yml
+    name: Stockholm University Business Capability Map
   - type: AgenticAccess
     url: agentic-access/stockholm-agentic-access.yml
   - type: VulnerabilityDisclosure
