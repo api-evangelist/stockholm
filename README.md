@@ -64,26 +64,58 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Stockholm University (Stockholms universitet) is a public research university in Sweden, ranked #128 in the QS World University Rankings 2025. This repository catalogs its public, machine-readable developer/API footprint as an [APIs.json](http://apisjson.org) profile. Stockholm University does not operate a single consolidated developer portal; its public footprint is distributed across standards-based and third-party services.
+Stockholm University (Stockholms universitet) is a public research university in Sweden, ranked #128 in the QS World University Rankings 2025. This repository catalogs its public, machine-readable footprint as an [APIs.json](http://apisjson.org) profile.
+
+**Stockholm University publishes no public, documented API of its own.** `api.su.se`, `data.su.se` and `developer.su.se` do not resolve, and `www.su.se/api` returns 404. What it does operate and serve anonymously is narrow: a Shibboleth SAML2 identity provider whose metadata is registered in SWAMID (and so in eduGAIN), the Bolin Centre Database research data repository minting DataCite DOIs under prefix 10.17043, and a SiteVision REST sitemap indexing every course syllabus in the education archive. Its two harvestable research surfaces — DiVA and Figshare — are tenancies, not Stockholm University engineering.
 
 - APIs.json: https://raw.githubusercontent.com/api-evangelist/stockholm/refs/heads/main/apis.yml
 - Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=stockholm-api-evangelist&utm_content=repo
 
+## Correction — 2026-08-30
+
+This profile previously credited Stockholm University with eleven APIs. All eleven were one Figshare
+contract: per-tag splits of `api.figshare.com/v2`, titled "Figshare altmetric ... API", with
+`info.contact` "Figshare Support" — the same document twelve other institutions in this cohort also
+shipped. Forty-eight files (the ten refined specs, the pristine Figshare source, the refine report,
+three JSON Schemas, two JSON Structures, two examples, a JSON-LD context, two rulesets, a vocabulary,
+scopes, an authentication summary, an agentic-access card, a capability map and twenty-one collection
+files) have been removed. The two repository *relationships* were kept and re-labelled as tenant
+surfaces, because a tenancy is a real institutional fact even when the contract behind it is a
+vendor's.
+
 ## Type
 
 - Type: Index
+- Category: Public Research University
 - Position: Consumer
 - Access: 3rd-Party
 
 ## Tags
 
-Education, Higher Education, University, Research, Open Access, Repository, Sweden, Europe
+Education, Higher Education, University, Research, Research Data, Open Access, Repository, Identity Federation, Course Catalog, Sweden, Europe
 
-## APIs
+## Surfaces
 
-- **DiVA Institutional Repository (OAI-PMH)** — Bibliographic metadata harvesting for SU research and student publications via DiVA. Live OAI-PMH 2.0 endpoint. Docs: https://www.su.se/stockholm-university-library/ — Base: https://su.diva-portal.org/dice/oai
-- **Research Data Repository (Figshare)** — Open research data and outputs at su.figshare.com, accessible via the Figshare public REST API. Docs: https://docs.figshare.com/ — Base: https://api.figshare.com/v2
-- **shib-keygen-api** — Open-source Shibboleth SP/SAML2 metadata keygen tooling from the SU GitHub org. Docs/Source: https://github.com/stockholmuniversity/shib-keygen-api
+Every surface carries an operator: `institution` (Stockholm University runs it), `tenant`
+(Stockholm University's account on someone else's platform), `vendor` (not theirs — not catalogued here).
+
+| Surface | Operator | Base |
+|---|---|---|
+| Shibboleth Identity Provider (SAML2 metadata) | **institution** | https://idp.it.su.se/idp/shibboleth |
+| Education Archive Sitemap (SiteVision REST) | **institution** | https://www.su.se/rest-api/sitemap |
+| DiVA Institutional Repository (OAI-PMH) | tenant | https://su.diva-portal.org/dice/oai |
+| Research Data Repository (Figshare) | tenant | https://su.figshare.com/ |
+
+The Bolin Centre Database (https://bolin.su.se/data/) is institution-operated and mints its own
+DataCite DOIs, but publishes no REST API, so it is recorded as a research-repository pointer and as
+DataCite conformance rather than as an API.
+
+## Conformance — `education` regime
+
+[conformance/stockholm-conformance.yml](conformance/stockholm-conformance.yml)
+
+Evidenced: **shibboleth**, **saml**, **oai-pmh**, **datacite**.
+Probed and not found: scim, lti, oneroster, ed-fi, caliper, qti, orcid, crossref.
 
 ## Plans
 
@@ -100,19 +132,28 @@ Education, Higher Education, University, Research, Open Access, Repository, Swed
 ## Timestamps
 
 - Created: 2026-06-03
-- Modified: 2026-06-03
+- Modified: 2026-08-30
 
 ## Common Properties
 
 - Website: https://www.su.se/english/
-- GitHub: https://github.com/stockholmuniversity
+- Privacy Policy: https://www.su.se/english/about-the-university/university-facts/about-this-website-and-processing-of-personal-data
+- Support: https://www.su.se/english/about-the-university/contact
+- GitHub Organization: https://github.com/stockholmuniversity
+- Source Code: https://github.com/stockholmuniversity/shib-keygen-api
 - LinkedIn: https://www.linkedin.com/school/stockholm-university/
-- Source Code: https://github.com/stockholmuniversity
-- Authentication (Federation): https://www.swamid.se/
+- Identity Federation: https://idp.it.su.se/idp/shibboleth
+- Research Repository: https://bolin.su.se/data/ · https://su.diva-portal.org/ · https://su.figshare.com/
+- Course Catalog: https://www.su.se/utbildning/utbildningskatalog
+- Library: https://www.su.se/english/library/
 
 ## Notes
 
-All entries were verified live where possible. The DiVA OAI-PMH endpoint returned a valid Identify response; the Figshare public REST API and the GitHub org both responded with success codes. No public, documented course/catalog or student-information API was located — the DSV department course portal (courses.dsv.su.se) is an HTML site with no documented public API found. Identity is federated through SWAMID/Shibboleth (SAML2). No endpoints were fabricated; see [review.yml](review.yml) for probed URLs and HTTP statuses.
+Every URL in this profile was probed live on 2026-08-30 and the status codes are recorded in
+`x-coverage.evidence` in [apis.yml](apis.yml) and in [review.yml](review.yml), negative probes
+included. Note that `https://www.su.se/.well-known/security.txt` exists but names
+`soc@sitevision.se` — the CMS vendor's security operations centre — not a Stockholm University
+contact. No endpoints were fabricated.
 
 ## Maintainers
 

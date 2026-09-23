@@ -1,0 +1,126 @@
+# Domain-standard conformance for Stockholm University, measured against the Kin Score
+# `education` regulatory regime standards[]: scim, lti, oneroster, ed-fi, caliper, qti,
+# oai-pmh, shibboleth, saml, orcid, datacite, crossref.
+#
+# REWARD-ONLY. Every entry below is a live probe recorded on the date shown. Standards the
+# institution does not demonstrably implement are listed under `not_found` with the probe
+# that failed, never left implied.
+provider: Stockholm University
+providerId: stockholm
+generated: '2026-08-30'
+method: probed
+source: live HTTP probes of su.se, su.diva-portal.org, bolin.su.se and api.datacite.org
+regime: education
+conformance:
+- standard: shibboleth
+  status: implemented
+  x-operator: institution
+  detail: >-
+    Stockholm University runs its own Shibboleth Identity Provider on its registrable
+    domain. The IdP serves SAML2 entity metadata anonymously, declares
+    shibmd:Scope "su.se", and carries a signing certificate issued to idp.it.su.se.
+  evidence:
+  - url: https://idp.it.su.se/idp/shibboleth
+    status: 200
+    note: >-
+      application/xml, 5,263 bytes. entityID="https://idp.it.su.se/idp/shibboleth",
+      IDPSSODescriptor with protocolSupportEnumeration urn:oasis:names:tc:SAML:2.0:protocol,
+      <shibmd:Scope regexp="false">su.se</shibmd:Scope>, X509 CN=idp.it.su.se.
+- standard: saml
+  status: implemented
+  x-operator: institution
+  detail: >-
+    The same entity is registered in SWAMID, the Swedish identity federation operated by
+    SUNET, which is an eduGAIN participant. SU's entityID is present in the published
+    SWAMID IdP metadata aggregate, so the institution is a machine-discoverable SAML2
+    identity provider to every federated service in eduGAIN.
+  evidence:
+  - url: https://idp.it.su.se/idp/shibboleth
+    status: 200
+    note: SAML 2.0 EntityDescriptor / IDPSSODescriptor served by the institution itself.
+  - url: https://mds.swamid.se/md/swamid-idp.xml
+    status: 200
+    note: >-
+      627,363 bytes. Grep of the SWAMID IdP aggregate returns exactly one su.se entity:
+      entityID="https://idp.it.su.se/idp/shibboleth". Aggregate is SUNET-operated, not SU's.
+- standard: oai-pmh
+  status: implemented
+  x-operator: tenant
+  detail: >-
+    Stockholm University's publication records are harvestable over OAI-PMH 2.0 from its
+    DiVA instance. The protocol conformance is real and the records are SU's, but the
+    endpoint is a tenancy: the Identify response names DiVA.org as the repository
+    identifier and diva-support@ub.uu.se as the admin contact, so the software and the
+    service are operated by the DiVA consortium (Uppsala University Library EPC), not by SU.
+  evidence:
+  - url: https://su.diva-portal.org/dice/oai?verb=Identify
+    status: 200
+    note: >-
+      OAI-PMH 2.0, repositoryName "DiVA - Academic Archive On-line", granularity
+      YYYY-MM-DDThh:mm:ssZ, deletedRecord persistent, adminEmail diva-support@ub.uu.se.
+  - url: https://su.diva-portal.org/dice/oai?verb=ListMetadataFormats
+    status: 200
+    note: >-
+      Eight metadata formats: oai_dc, oai_etdms, marc21, marc21electronic, swepub_mods,
+      uppsok, gmd, mets_kb.
+  - url: https://su.diva-portal.org/dice/oai?verb=ListRecords&metadataPrefix=oai_dc&set=all-su
+    status: 200
+    note: 213,925 bytes of SU records returned against the institution-scoped set `all-su`.
+- standard: datacite
+  status: implemented
+  x-operator: institution
+  detail: >-
+    The Bolin Centre Database, a research data repository Stockholm University operates on
+    its own domain, mints DataCite DOIs under prefix 10.17043. The DataCite repository
+    record resolves to bolin.su.se/data and has been active since 2014. DOIs are registered
+    through the Swedish National Data Service (SND) consortium account, which is how Swedish
+    institutions ordinarily hold DataCite membership.
+  evidence:
+  - url: https://api.datacite.org/dois/10.17043/tarfala-meteorological-variables-1
+    status: 200
+    note: >-
+      publisher "Bolin Centre Database", client snd.bolin, title "Meteorological data from
+      Tarfala Research Station, northern Sweden".
+  - url: https://api.datacite.org/clients/snd.bolin
+    status: 200
+    note: DataCite repository "Bolin Centre Database", year 2014, url https://bolin.su.se/data/.
+  - url: https://bolin.su.se/data/tarfala-meteorological-variables
+    status: 200
+    note: Landing page cites doi.org/10.17043/tarfala-meteorological-variables-1.
+not_found:
+- standard: orcid
+  probe: https://su.diva-portal.org/dice/oai?verb=ListRecords&metadataPrefix=swepub_mods&set=all-su
+  status: 200
+  note: >-
+    465,215 bytes of swepub_mods records returned; no ORCID identifier appears in the
+    harvested sample. No institution-operated ORCID surface found.
+- standard: crossref
+  probe: https://api.datacite.org/dois/10.17043/tarfala-meteorological-variables-1
+  status: 200
+  note: SU's own repository DOIs are DataCite, not Crossref. No SU Crossref member prefix found.
+- standard: lti
+  probe: https://www.su.se/rest-api/
+  status: 403
+  note: >-
+    Stockholm University's learning platform (Athena/Moodle) is behind institutional
+    authentication; no anonymously reachable LTI 1.3 JWKS or platform configuration found.
+- standard: scim
+  probe: https://idp.it.su.se/
+  status: 200
+  note: No SCIM endpoint published. Provisioning is internal (SUKAT directory services).
+- standard: oneroster
+  probe: https://www.su.se/
+  status: 200
+  note: Not applicable and not found — OneRoster is a K-12 rostering standard.
+- standard: ed-fi
+  probe: https://www.su.se/
+  status: 200
+  note: Not applicable and not found — Ed-Fi is a US K-12 data standard.
+- standard: caliper
+  probe: https://www.su.se/
+  status: 200
+  note: No Caliper analytics endpoint published.
+- standard: qti
+  probe: https://www.su.se/
+  status: 200
+  note: No QTI assessment interchange surface published.

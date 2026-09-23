@@ -1,46 +1,110 @@
----
 name: Stockholm University
 description: Stockholm University public developer/API footprint review for APIs.json cataloging.
 url: https://raw.githubusercontent.com/api-evangelist/stockholm/refs/heads/main/review.yml
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 reviews:
-  - date: '2026-06-03'
-    rating: 2
-    summary: >-
-      No consolidated developer portal exists. Confirmed live: the DiVA OAI-PMH
-      repository endpoint (returned a valid Identify response, repositoryName
-      "DiVA - Academic Archive On-line") and the Figshare public REST API backing
-      su.figshare.com (HTTP 200). The official GitHub org (stockholmuniversity, ~55
-      public repos) is live and includes shib-keygen-api, evidencing SWAMID/Shibboleth
-      SAML2 identity. No public, documented course/catalog or student-information API
-      was found. Ratings reflect a standards-based and third-party footprint rather
-      than first-party API products. No endpoints fabricated.
-    endpoints:
-      - url: https://su.diva-portal.org/dice/oai?verb=Identify
-        status: 200
-        note: Live OAI-PMH 2.0 Identify response; DiVA repository metadata harvesting.
-      - url: https://su.diva-portal.org/
-        status: 302
-        note: Redirects to /smash/ DiVA portal UI.
-      - url: https://api.figshare.com/v2/articles
-        status: 200
-        note: Figshare public REST API live; backs su.figshare.com research data repo.
-      - url: https://su.figshare.com/
-        status: 202
-        note: Stockholm University Figshare research data portal (third-party hosted).
-      - url: https://github.com/stockholmuniversity
-        status: 200
-        note: Official GitHub org, ~55 public repos including shib-keygen-api.
-      - url: https://github.com/stockholmuniversity/shib-keygen-api
-        status: 200
-        note: Shibboleth SP/SAML2 metadata keygen tooling (open source).
-      - url: https://www.su.se/english/
-        status: 200
-        note: Official institutional website (English).
-      - url: https://courses.dsv.su.se/
-        status: 200
-        note: DSV department course/timetable portal (HTML; no documented public API found).
-      - url: https://www.su.se/diva-portal-search-api
-        status: 0
-        note: No public DiVA search/REST API documentation page located for SU.
+- date: '2026-06-03'
+  rating: 2
+  summary: 'No consolidated developer portal exists. Confirmed live: the DiVA OAI-PMH repository endpoint
+    (returned a valid Identify response, repositoryName "DiVA - Academic Archive On-line") and the Figshare
+    public REST API backing su.figshare.com (HTTP 200). The official GitHub org (stockholmuniversity,
+    ~55 public repos) is live and includes shib-keygen-api, evidencing SWAMID/Shibboleth SAML2 identity.
+    No public, documented course/catalog or student-information API was found. Ratings reflect a standards-based
+    and third-party footprint rather than first-party API products. No endpoints fabricated.'
+  endpoints:
+  - url: https://su.diva-portal.org/dice/oai?verb=Identify
+    status: 200
+    note: Live OAI-PMH 2.0 Identify response; DiVA repository metadata harvesting.
+  - url: https://su.diva-portal.org/
+    status: 302
+    note: Redirects to /smash/ DiVA portal UI.
+  - url: https://api.figshare.com/v2/articles
+    status: 200
+    note: Figshare public REST API live; backs su.figshare.com research data repo.
+  - url: https://su.figshare.com/
+    status: 202
+    note: Stockholm University Figshare research data portal (third-party hosted).
+  - url: https://github.com/stockholmuniversity
+    status: 200
+    note: Official GitHub org, ~55 public repos including shib-keygen-api.
+  - url: https://github.com/stockholmuniversity/shib-keygen-api
+    status: 200
+    note: Shibboleth SP/SAML2 metadata keygen tooling (open source).
+  - url: https://www.su.se/english/
+    status: 200
+    note: Official institutional website (English).
+  - url: https://courses.dsv.su.se/
+    status: 200
+    note: DSV department course/timetable portal (HTML; no documented public API found).
+  - url: https://www.su.se/diva-portal-search-api
+    status: 0
+    note: No public DiVA search/REST API documentation page located for SU.
+- date: '2026-08-30'
+  rating: 2
+  summary: 'University-pipeline re-profile. Operator attribution was settled before anything was kept.
+    The eleven APIs this profile carried were one Figshare contract (api.figshare.com/v2, info.contact
+    "Figshare Support") split per tag by refine-openapis; twelve other institutions in the cohort ship
+    the same document. All ten refined specs, the pristine Figshare source, and the 37 files derived from
+    them were removed. Stockholm University publishes no public, documented API of its own — api.su.se,
+    data.su.se and developer.su.se do not resolve. Two institution-operated machine-readable surfaces
+    were found by live probe and are new to this profile: the Shibboleth SAML2 IdP metadata at idp.it.su.se,
+    registered in SWAMID and therefore eduGAIN, and the SiteVision /rest-api/sitemap education archive
+    index on www.su.se. The Bolin Centre Database on bolin.su.se is institution-operated and mints DataCite
+    DOIs (prefix 10.17043, repository snd.bolin, active since 2014) but has no REST API. DiVA and Figshare
+    are kept as tenant relationships, not as SU contracts. Four education-regime standards evidenced:
+    shibboleth, saml, oai-pmh, datacite. No endpoints fabricated.'
+  endpoints:
+  - url: https://idp.it.su.se/idp/shibboleth
+    status: 200
+    note: INSTITUTION. SAML2 IdP metadata, entityID https://idp.it.su.se/idp/shibboleth, shibmd:Scope
+      su.se.
+  - url: https://mds.swamid.se/md/swamid-idp.xml
+    status: 200
+    note: SWAMID IdP aggregate; contains SU's entityID. Operated by SUNET, not SU.
+  - url: https://www.su.se/rest-api/sitemap
+    status: 404
+    note: INSTITUTION. Valid <sitemapindex> body despite the 404 code; advertised in robots.txt.
+  - url: https://www.su.se/rest-api/sitemap/educationArchiveSitemap
+    status: 200
+    note: 3,921,519 bytes of course-syllabus URLs with course codes and lastmod.
+  - url: https://www.su.se/rest-api/search
+    status: 400
+    note: SiteVision REST framework live, JSON error body, no public RestApp exposed.
+  - url: https://bolin.su.se/data/
+    status: 200
+    note: INSTITUTION. Bolin Centre Database research data repository. No REST API found.
+  - url: https://api.datacite.org/clients/snd.bolin
+    status: 200
+    note: DataCite repository "Bolin Centre Database", year 2014, url https://bolin.su.se/data/.
+  - url: https://su.diva-portal.org/dice/oai?verb=Identify
+    status: 200
+    note: TENANT. OAI-PMH 2.0; adminEmail diva-support@ub.uu.se, repositoryIdentifier DiVA.org.
+  - url: https://su.diva-portal.org/dice/oai?verb=ListMetadataFormats
+    status: 200
+    note: 'Eight formats: oai_dc, oai_etdms, marc21, marc21electronic, swepub_mods, uppsok, gmd, mets_kb.'
+  - url: https://su.figshare.com/
+    status: 202
+    note: TENANT. Empty body, bot challenge. Contract behind it is api.figshare.com/v2 — removed from
+      this repo.
+  - url: https://api.su.se/
+    status: 0
+    note: Negative probe. No API gateway; host does not resolve.
+  - url: https://developer.su.se/
+    status: 0
+    note: Negative probe. No developer portal; host does not resolve.
+  - url: https://data.su.se/
+    status: 0
+    note: Negative probe. No open data portal; host does not resolve.
+  - url: https://www.su.se/api/
+    status: 404
+    note: Negative probe.
+  - url: https://www.su.se/llms.txt
+    status: 404
+    note: Negative probe. No agent-directed content policy.
+  - url: https://www.su.se/.well-known/security.txt
+    status: 200
+    note: 'Present, but Contact: mailto:soc@sitevision.se — the CMS vendor''s SOC, not the university.'
+  - url: https://github.com/stockholmuniversity
+    status: 200
+    note: Official GitHub org, 55 public repos; infrastructure/sysadmin tooling, no hosted API.
