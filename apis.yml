@@ -64,7 +64,7 @@ tags:
   - Sweden
   - Europe
 created: '2026-06-03'
-modified: '2026-08-30'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: stockholm:identity-federation
@@ -161,6 +161,8 @@ apis:
   - type: Documentation
     url: https://www.su.se/robots.txt
 common:
+  - url: https://www.su.se/english/news
+    type: Blog
   - type: Website
     url: https://www.su.se/english/
   - type: PrivacyPolicy
