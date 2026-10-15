@@ -1,0 +1,70 @@
+edges:
+- partner_name: eduGAIN
+  partner: null
+  type: register
+  channel: standard-directory
+  relationship: network-participant
+  direction: partner-built
+  evidence: https://technical.edugain.org/api.php?action=list_entities&type=idp&format=json
+  category: research and education identity federation
+  contract_reference:
+    network: eduGAIN (GÉANT interfederation)
+    spec_file: null
+    roles:
+    - identity-provider
+    - service-provider
+    role: identity-and-service-provider
+    federations:
+    - SWAMID
+    matched_by: domain:su.se
+    entities:
+    - entity_id: https://idp.it.su.se/idp/shibboleth
+      role: identity-provider
+      federation: SWAMID
+      display_name: Stockholm University
+      entity_categories:
+      - '4'
+      - '11'
+      - '67'
+      - '71'
+      - '76'
+      - '129'
+      - '190'
+      - '192'
+      - '193'
+      - '194'
+      sirtfi: true
+      coco: false
+    - entity_id: https://gitlab.fysik.su.se/swamidproxy/gitlab.xml
+      role: service-provider
+      federation: SWAMID
+      display_name: Stockholm University
+      entity_categories:
+      - '5'
+      sirtfi: false
+      coco: true
+    - entity_id: https://indico.fysik.su.se/Shibboleth.sso
+      role: service-provider
+      federation: SWAMID
+      display_name: Stockholm University
+      entity_categories:
+      - '203'
+      sirtfi: false
+      coco: true
+    - entity_id: https://nextcloud.fysik.su.se/swamidproxy/nextcloud.xml
+      role: service-provider
+      federation: SWAMID
+      display_name: Stockholm University
+      entity_categories:
+      - '5'
+      sirtfi: false
+      coco: true
+    detected_by: sweep-higher-ed.py
+    detected: '2026-10-15'
+  detected_by: sweep-higher-ed.py
+  first_seen: '2026-10-15'
+generated: '2026-10-15'
+method: searched
+checked:
+- https://technical.edugain.org/api.php?action=list_entities&type=idp&format=json
+- https://technical.edugain.org/api.php?action=list_entities&type=sp&format=json
