@@ -1,4 +1,4 @@
-# Stockholm University (stockholm)
+# Stockholm University
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,97 +64,115 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Stockholm University (Stockholms universitet) is a public research university in Sweden, ranked #128 in the QS World University Rankings 2025. This repository catalogs its public, machine-readable footprint as an [APIs.json](http://apisjson.org) profile.
+Stockholm University (Stockholms universitet) is a public research university in Sweden and one of the country's largest, with roughly 33,000 students across four faculties. It operates no public developer portal, no API gateway and no first-party documented API: api.su.se, data.su.se and developer.su.se do not resolve, and www.su.se/api returns 404. What the institution genuinely runs and serves anonymously is narrow — a Shibboleth SAML2 identity provider at idp.it.su.se whose entity metadata is published by the university and registered in the SWAMID federation (and so in eduGAIN), the Bolin Centre Database research data repository on bolin.su.se minting its own DataCite DOIs under prefix 10.17043 since 2014, and a SiteVision REST sitemap on www.su.se that indexes every course syllabus in the education archive. Its two harvestable research surfaces are both tenancies rather than SU engineering: the DiVA OAI-PMH endpoint at su.diva-portal.org is operated by the DiVA consortium at Uppsala University Library, and su.figshare.com is a Figshare deployment. This profile previously credited Stockholm University with eleven APIs that were all one Figshare contract at api.figshare.com/v2; those contracts and everything derived from them have been removed and the two repository relationships recorded as tenant surfaces instead.
 
-**Stockholm University publishes no public, documented API of its own.** `api.su.se`, `data.su.se` and `developer.su.se` do not resolve, and `www.su.se/api` returns 404. What it does operate and serve anonymously is narrow: a Shibboleth SAML2 identity provider whose metadata is registered in SWAMID (and so in eduGAIN), the Bolin Centre Database research data repository minting DataCite DOIs under prefix 10.17043, and a SiteVision REST sitemap indexing every course syllabus in the education archive. Its two harvestable research surfaces — DiVA and Figshare — are tenancies, not Stockholm University engineering.
+**Areas:** Education · Higher Education · University · Research · Research Data · Open Access · Repository · Identity Federation · Course Catalog · Sweden · Europe
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/stockholm/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=stockholm-api-evangelist&utm_content=repo
+## Stockholm University on APIs.io
 
-## Correction — 2026-08-30
+Everything profiled for Stockholm University is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/stockholm/](https://apis.io/providers/stockholm/)** — or go straight to one of the APIs or properties below.
 
-This profile previously credited Stockholm University with eleven APIs. All eleven were one Figshare
-contract: per-tag splits of `api.figshare.com/v2`, titled "Figshare altmetric ... API", with
-`info.contact` "Figshare Support" — the same document twelve other institutions in this cohort also
-shipped. Forty-eight files (the ten refined specs, the pristine Figshare source, the refine report,
-three JSON Schemas, two JSON Structures, two examples, a JSON-LD context, two rulesets, a vocabulary,
-scopes, an authentication summary, an agentic-access card, a capability map and twenty-one collection
-files) have been removed. The two repository *relationships* were kept and re-labelled as tenant
-surfaces, because a tenancy is a real institutional fact even when the contract behind it is a
-vendor's.
+### APIs (4)
 
-## Type
+- [Stockholm University Shibboleth Identity Provider (SAML2 Metadata)](https://apis.io/apis/stockholm/identity-federation/) — Stockholm University operates its own Shibboleth Identity Provider and publishes its SAML 2.0 entity metadata anonymously on its registrable domain. The…
+- [DiVA Institutional Repository (OAI-PMH)](https://apis.io/apis/stockholm/diva-oai/) — Stockholm University's publication records are harvestable over OAI-PMH 2.0 from its DiVA instance at su.diva-portal.org, with an institution-scoped set…
+- [Stockholm University Research Data Repository (Figshare tenancy)](https://apis.io/apis/stockholm/figshare-repository/) — su.figshare.com is Stockholm University's research data repository, running on Figshare. The data, the DOIs and the institutional group are SU's; the…
+- [Stockholm University Education Archive Sitemap (SiteVision REST)](https://apis.io/apis/stockholm/education-archive-sitemap/) — www.su.se runs SiteVision, whose REST framework is reachable at /rest-api/ and answers with structured JSON. No public RestApp is exposed there (a request…
 
-- Type: Index
-- Category: Public Research University
-- Position: Consumer
-- Access: 3rd-Party
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Education, Higher Education, University, Research, Research Data, Open Access, Repository, Identity Federation, Course Catalog, Sweden, Europe
+#### Vocabulary (1)
 
-## Surfaces
+The provider's domain terms, defined.
 
-Every surface carries an operator: `institution` (Stockholm University runs it), `tenant`
-(Stockholm University's account on someone else's platform), `vendor` (not theirs — not catalogued here).
+- [Stockholm University Research Data API Vocabulary](https://apis.io/vocabularies/stockholm/stockholm-vocabulary/)
 
-| Surface | Operator | Base |
-|---|---|---|
-| Shibboleth Identity Provider (SAML2 metadata) | **institution** | https://idp.it.su.se/idp/shibboleth |
-| Education Archive Sitemap (SiteVision REST) | **institution** | https://www.su.se/rest-api/sitemap |
-| DiVA Institutional Repository (OAI-PMH) | tenant | https://su.diva-portal.org/dice/oai |
-| Research Data Repository (Figshare) | tenant | https://su.figshare.com/ |
+#### Security (2)
 
-The Bolin Centre Database (https://bolin.su.se/data/) is institution-operated and mints its own
-DataCite DOIs, but publishes no REST API, so it is recorded as a research-repository pointer and as
-DataCite conformance rather than as an API.
+Authentication, trust centre, and vulnerability disclosure.
 
-## Conformance — `education` regime
+- [Stockholm Domain Security](https://apis.io/security/stockholm/stockholm-domain-security/)
+- [Stockholm Vulnerability Disclosure](https://apis.io/security/stockholm/stockholm-vulnerability-disclosure/)
 
-[conformance/stockholm-conformance.yml](conformance/stockholm-conformance.yml)
+#### Plans and pricing (1)
 
-Evidenced: **shibboleth**, **saml**, **oai-pmh**, **datacite**.
-Probed and not found: scim, lti, oneroster, ed-fi, caliper, qti, orcid, crossref.
+Published plans, tiers and prices.
 
-## Plans
+- [Stockholm Plans Pricing](https://apis.io/plans/stockholm/stockholm-plans-pricing/)
 
-[plans/stockholm-plans-pricing.yml](plans/stockholm-plans-pricing.yml)
+#### Rate limits (1)
 
-## Rate Limits
+Published request limits.
 
-[rate-limits/stockholm-rate-limits.yml](rate-limits/stockholm-rate-limits.yml)
+- [Stockholm Rate Limits](https://apis.io/rate-limits/stockholm/stockholm-rate-limits/)
 
-## FinOps
+#### FinOps (1)
 
-[finops/stockholm-finops.yml](finops/stockholm-finops.yml)
+What the API costs to run, by operation.
 
-## Timestamps
+- [Stockholm Finops](https://apis.io/finops/stockholm/stockholm-finops/)
 
-- Created: 2026-06-03
-- Modified: 2026-08-30
+## Where to find this API
 
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Website: https://www.su.se/english/
-- Privacy Policy: https://www.su.se/english/about-the-university/university-facts/about-this-website-and-processing-of-personal-data
-- Support: https://www.su.se/english/about-the-university/contact
-- GitHub Organization: https://github.com/stockholmuniversity
-- Source Code: https://github.com/stockholmuniversity/shib-keygen-api
-- LinkedIn: https://www.linkedin.com/school/stockholm-university/
-- Identity Federation: https://idp.it.su.se/idp/shibboleth
-- Research Repository: https://bolin.su.se/data/ · https://su.diva-portal.org/ · https://su.figshare.com/
-- Course Catalog: https://www.su.se/utbildning/utbildningskatalog
-- Library: https://www.su.se/english/library/
+- [Website](https://www.su.se/english/)
+- [Support](https://www.su.se/english/about-the-university/contact)
+- [Blog](https://www.su.se/english/news)
+- [Privacy policy](https://www.su.se/english/about-the-university/university-facts/about-this-website-and-processing-of-personal-data)
+- [GitHub](https://github.com/stockholmuniversity)
 
-## Notes
+## API Evangelist rating
 
-Every URL in this profile was probed live on 2026-08-30 and the status codes are recorded in
-`x-coverage.evidence` in [apis.yml](apis.yml) and in [review.yml](review.yml), negative probes
-included. Note that `https://www.su.se/.well-known/security.txt` exists but names
-`soc@sitevision.se` — the CMS vendor's security operations centre — not a Stockholm University
-contact. No endpoints were fabricated.
+**Kin Score 16.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 4.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 15.8 |
 
-- Kin Lane — kin@apievangelist.com
+**Agent readiness 0.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/stockholm/](https://apis.io/providers/stockholm/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Stockholm University: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/stockholm/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
